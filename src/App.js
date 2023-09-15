@@ -12,6 +12,14 @@ export default function App() {
     console.log(data.Search);
   }
 
+  const movie1 = {
+    "Title": "Superman, Spiderman or Batman",
+    "Year": "2011",
+    "imdbID": "tt2084949",
+    "Type": "movie",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjQ4MzcxNDU3N15BMl5BanBnXkFtZTgwOTE1MzMxNzE@._V1_SX300.jpg"
+  };
+
   useEffect(()=>{
     searchMovies('Spiderman');
   },[]);
@@ -20,7 +28,7 @@ export default function App() {
     <div className='app'>
       <h1>MovieLand</h1>
 
-      <div className='Search'>
+      <div className='search'>
         <input 
           placeholder='Search for movies'
           value="superman"
@@ -31,6 +39,22 @@ export default function App() {
           alt="search"
           onClick={()=>console.log("clicked")}
         />
+      </div>
+
+      <div className='container'>
+        <div className='movie'>
+          <div>
+            <p>{movie1.Year}</p>
+          </div>
+          <div>
+            <img src={movie1.Poster !== 'N/A' ? movie1.Poster : 'https://via.placeholder.com/400'} alt={movie1.Title} />
+          </div>
+          <div>
+            <span>{movie1.Type}</span>
+            <h3>{movie1.Title}</h3>
+          </div>
+          
+        </div>
       </div>
     </div>
   )
