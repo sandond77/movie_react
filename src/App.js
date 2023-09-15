@@ -40,7 +40,7 @@ export default function App() {
         <img
           src={searchIcon}
           alt="search"
-          onClick={()=>console.log("clicked")}
+          onClick={()=> searchMovies(searchTerm)}
         />
       </div>
 
